@@ -1,5 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 
 namespace WebApplication
 {
@@ -9,7 +11,13 @@ namespace WebApplication
     {
       var host = new WebHostBuilder()
         .UseKestrel()
-        .UseStartup<Startup>()
+        .Configure(app =>
+        {
+            app.Run(async (context) => {
+              await context.Response.WriteAsync("Hello world from ASP.net Core");
+            });
+        })
+        .UseUrls("http://*:3000")
         .Build();
 
       host.Run();
