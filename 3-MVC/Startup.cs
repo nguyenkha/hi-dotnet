@@ -6,7 +6,7 @@ namespace MvcWebApplication {
   public class Startup {
     public void ConfigureServices(IServiceCollection services)
     {
-      // MVC service: MVC Core, Razor, JsonFormatter...
+      // MVC service: MVC Core, View, Razor, JsonFormatter, CORS...
       services.AddMvc();
     }
     public void Configure(IApplicationBuilder app) {
