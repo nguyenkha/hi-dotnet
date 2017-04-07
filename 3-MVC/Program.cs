@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 
@@ -10,6 +11,7 @@ namespace MvcWebApplication
     {
       var host = new WebHostBuilder()
         .UseKestrel()
+        .UseContentRoot(Directory.GetCurrentDirectory())
         .UseStartup<Startup>()
         .UseUrls("http://*:3000")
         .Build();

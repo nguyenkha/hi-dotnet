@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MvcWebApplication.Controllers {
   public class HomeController : Controller {
-    public string Index()
+    public ActionResult Index()
     {
-        return "Hello world from ASP.net MVC controller";
+        return View();
     }
   }
 }
